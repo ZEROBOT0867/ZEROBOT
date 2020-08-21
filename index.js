@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "NzQ1MjYxMTI0ODE0ODk3MTcz.XzvMgg.TuZyJ6EYKIynR4G1nXwGxBadoAE";
+const token = process.argv.length == 2 ? process.env.token;
 const moment = require("moment");
 require("moment-duration-format");
 const welcomeChannelName = "안녕하세요";
@@ -38,7 +38,7 @@ client.on('message', (message) => {
     return message.reply('pong');
   }
 
-  if(message.content == '!si') {
+  if(message.content == '!help') {
     let embed = new Discord.RichEmbed()
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
